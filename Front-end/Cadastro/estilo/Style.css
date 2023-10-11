@@ -21,6 +21,13 @@ h1{
     line-height: 158.052%; /* 142.246px */
     letter-spacing: 0.9px;
 }
+
+
+input {
+    border: none;
+    outline: none;
+}
+
 #container{
     background: linear-gradient(251deg, #9F00A3 14.99%, rgba(254, 0, 228, 0.04) 100.38%);
     display: grid;
@@ -40,41 +47,32 @@ h1{
     padding: 20px;
 }
 
-.logar input{
+.logar input, .cadastro input{
     color: #ffffff;
     font-family: Italiana;
-    font-size: 45px;
+    font-size: 40px;
     background-color: transparent;
     display: block;
-    text-align: center;
     margin-left: auto;
     margin-right: auto;
     height: 50px;
     width: 450px;
     margin-bottom: 20px;
+    border-radius: 10px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #FFF;
 }
+
 
 .cadastro{
     flex-basis: 50%;
     align-self: center;
     padding: 20px;
-
+    
 }
 
-.cadastro input{
-    color: white;
-    font-family: Italiana;
-    font-size: 45px;
-    background-color: transparent;
-    border-radius: 10px;
-    display: block;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    height: 50px;
-    width: 450px;
-    margin-bottom: 20px;
-}
 
 button{
     text-align: center;
@@ -84,4 +82,15 @@ button{
     background: #FFD66E;
     width: 241px;
     height: 49px;
+}
+
+
+::placeholder{
+    letter-spacing: 3.5px;
+    font-family: Italiana;
+    font-style: normal;
+    text-align: left;
+    padding-left: 20px;
+    text-align: left;
+    color: white;
 }
