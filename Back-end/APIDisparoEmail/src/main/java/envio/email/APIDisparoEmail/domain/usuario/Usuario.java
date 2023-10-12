@@ -19,10 +19,10 @@ public class Usuario {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "primeiroNome")
+    @Column(name = "primeironome")
     private String primeiroNome;
 
-    @Column(name = "sobreNome")
+    @Column(name = "segundonome")
     private String sobreNome;
 
     @Column(name = "email")

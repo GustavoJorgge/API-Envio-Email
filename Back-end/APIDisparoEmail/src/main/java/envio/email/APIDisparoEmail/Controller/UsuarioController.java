@@ -23,7 +23,7 @@ public class UsuarioController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity cadastrar(DadosCadastroUsuario dados){
+    public ResponseEntity cadastrar(@RequestBody DadosCadastroUsuario dados){
         var usuario = new Usuario(dados);
         repository.save(usuario);
         System.out.println(usuario);
