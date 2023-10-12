@@ -14,19 +14,50 @@
 
         <div class="logar">
             <h1>Logar</h1>
-            <input type="email" placeholder="E-mail" id="email">
-            <input type="password" placeholder="Senha" id="password">
+            <input type="email" placeholder="E-mail" id="email_Logar">
+            <input type="password" placeholder="Senha" id="password_Logar">
             <button type="submit">Login</button>
         </div>
 
         <div class="cadastro">
             <h1>Cadastrar</h1>
-            <input type="text" placeholder="Primeiro Nome" id="First_name">
-            <input type="text" placeholder="Sobre nome" id="Last_name">
-            <input type="email" placeholder="E-mail" id="email">
-            <input type="password" placeholder="Senha" id="password">
-            <button type="submit">Cadastrar</button>
+            <form action="http://localhost:8080/cadastro" method="post">
+                <input type="text" placeholder="Primeiro Nome" id="primeironome">
+                <input type="text" placeholder="Sobrenome" id="segundonome">
+                <input type="email" placeholder="E-mail" id="email">
+                <input type="password" placeholder="Senha" id="senha">
+                <button type="submit" onclick="cadastrar()">Cadastrar</button>
+            </form>
         </div>
     </div>
+
+    <script>
+        function cadastrar() {
+            var primeironome = document.getElementById("primeironome").value;
+            var segundonome = document.getElementById("segundonome").value;
+            var email = document.getElementById("email").value;
+            var senha = document.getElementById("senha").value;
+
+            var data = {
+                primeiroNome: primeironome,
+                sobrenome: segundonome,
+                email: email,
+                senha: senha
+            };
+
+            fetch('http://localhost:8080/cadastro', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Erro:', error));
+        }
+    </script>
+
+    
 </body>
 </html>
